@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {CommentService} from './services/comment.service';
 import {PostServiceService} from './services/PostService/post-service.service';
+import {PostModel} from '../Models/PostModel';
+import {CommentModel} from '../Models/commentModel';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +13,7 @@ import {PostServiceService} from './services/PostService/post-service.service';
 })
 export class AppComponent {
   title = 'angular';
-  comments: CommentModel[];
+  comments: CommentModel;
   posts: PostModel[];
   constructor(private commentService: CommentService, private postService: PostServiceService) {
       this.commentService.getAllComments().subscribe(value => this.comments = value);
