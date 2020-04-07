@@ -13,7 +13,7 @@ import {CommentModel} from '../Models/commentModel';
 })
 export class AppComponent {
   title = 'angular';
-  comments: CommentModel;
+  comments: CommentModel[];
   posts: PostModel[];
   constructor(private commentService: CommentService, private postService: PostServiceService) {
       this.commentService.getAllComments().subscribe(value => this.comments = value);
