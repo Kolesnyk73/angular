@@ -1,5 +1,6 @@
 import { Component, Input} from '@angular/core';
 import {CommentModel} from '../../Models/commentModel';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-comment',
@@ -9,9 +10,10 @@ import {CommentModel} from '../../Models/commentModel';
 export class CommentComponent {
 
   @Input()
-  comment: CommentModel;
+  comments: CommentModel[];
 
-  constructor() {
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.comments = this.activatedRoute.snapshot.data.allComments;
   }
 }
 

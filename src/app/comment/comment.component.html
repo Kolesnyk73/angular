@@ -1,6 +1,6 @@
-<div>
-  {{comment.postId}}
-  {{comment.id}}
-  {{comment.name}}
-  {{comment.email}}
+<!--<app-single-comment *ngFor="let c of comments" [comment]="c"></app-single-comment>-->
+<div *ngFor="let c of comments">
+  {{c.name}}
+  <button>click</button>
 </div>
+
